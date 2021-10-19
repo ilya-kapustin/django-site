@@ -1,0 +1,16 @@
+{% extends '../shops_index/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+{% if not request.user.is_authenticated %}
+<p>У вас нет доступа</p>
+{% else %}
+<img src="../../media/{{profile.img}}">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Обновить</button>
+</form>
+{% endif %}
+{% endblock %}

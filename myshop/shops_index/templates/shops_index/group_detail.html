@@ -1,0 +1,43 @@
+{% extends 'shops_index/base.html' %}
+{% load i18n %}
+{% block content %}
+<h1>{{group}}</h1>
+{% if request.user.is_staff %}
+<a href="/group_update/{{group.id}}">Редактировать группу</a><br>
+<a href="/add_shops">Добавить запись</a>
+{% endif %}
+<center><img src="../media/{{group.img}}" style="height:500px;"></center>
+<p><b>Описание:</b> {{group.description}}</p>
+<hr>
+<div style="width: 100%;min-height:100%;overflow:hidden;">
+{% for thing in things %}
+    {% if thing.group_id == group.id %}
+<div style="
+background: #fff;
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
+padding: 10px;
+margin-top: 1%;
+margin-left: 1%;
+float:left;
+height:10%;
+width: 20%;
+">
+    <img src="../media/{{thing.img}}" style="width: 100%;height:200px;">
+    <p><b><a href="/shops/{{ thing.pk }}">{{thing.title}}</a></b></p>
+    <p><b>{% trans 'Артикул' %}:</b> {{thing.code_thing}}</p>
+    <p><b>{% trans 'Группа' %}:</b> {{thing.group}}</p>
+    <p><b>{% trans 'Цена' %}:</b> {{thing.price}}</p>
+    <div style="
+    width: 200px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+">
+        <p><b>{% trans 'Описание' %}:</b><br>{{thing.description}}</p>
+    </div>
+</div>
+    {% endif %}
+{% endfor %}
+</div>
+
+{% endblock %}

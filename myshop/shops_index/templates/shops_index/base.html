@@ -1,0 +1,51 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<img src="/media/1549455082_shapka-sayta-vesna-1151132.jpg" width="100%">
+{% block mainmenu %}
+<div style="width:100%;height:30px;">
+<ul>
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/">{% trans 'Главная' %}</a></li>
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/about">{% trans 'О нас' %}</a></li>
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/contacts">{% trans 'Контакты' %}</a></li>
+    {% if not request.user.is_authenticated %}
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/account/login">{% trans 'Авторизация' %}</a></li>
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/account/registration">{% trans 'Регистрация' %}</a></li>
+    {% else %}
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"> | <a href="/account/profile"> {{ request.user.username }} </a> |
+        <a href="/cart/">{% trans 'Корзина' %}</a> | </li>
+    <li style="float:left;margin-left:2.5%;font-size: 25pt;"><a href="/account/logout">{% trans 'Выйти' %}</a></li>
+    {% endif %}
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{language.code}})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+    </form>
+</ul>
+</div>
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock %}
+
+
+<div style="width:100%;height:auto;margin-top:30px;">
+    <hr>
+    <center><p style="margin-top:90px">&#169 Хутор</p></center>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'shops_index/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% for contact in contacts %}
+<p><b>Телефон:</b> {{contact.phone}}<br>
+    <b>Адрес:</b> {{contact.address}}<br>
+    <b>Почта:</b> {{contact.email}}</p>
+{% endfor %}
+{% endblock %}

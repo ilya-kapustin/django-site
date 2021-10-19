@@ -1,0 +1,55 @@
+{% extends 'shops_index/base.html' %}
+{% load i18n %}
+{% block content %}
+<h1>{{thing.title}}</h1>
+
+<center><img src="../../media/{{thing.img}}" style="width: 50%;"></center>
+{% if request.user.is_staff %}
+<a href="/shops_update/{{thing.id}}">{% trans 'Редактировать запись' %}</a>
+{% endif %}
+<p><b>{% trans 'Артикул' %}:</b> {{thing.code_thing}}</p>
+<p><b>{% trans 'Группа' %}:</b> {{thing.group}}</p>
+<p><b>{% trans 'Цена' %}:</b> {{thing.price}}</p>
+<p><b>{% trans 'Дата размещения' %}:</b> {{thing.created_at}}</p>
+<p><b>{% trans 'Описание' %}:</b><br>{{thing.description}}</p>
+<p>{% trans 'Теги' %}:
+{% for tag in thing.tags.all %}
+    <a href="/tag/{{tag.id}}">{{tag.title}}</a>
+{% endfor %}
+</p>
+
+<form action="/cart/add/{{thing.id}}/" method="post">
+    {{cart_product_form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="В корзину">
+</form>
+
+
+<hr>
+<h2>Комментарии</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>{{form.non_field_errors}}</div>
+
+    {% for f in form %}
+    {% if f.label == 'Автор' and request.user.is_authenticated %}
+    <input type="text" name="author" value="{{ request.user.username }}">
+    {% else %}
+    <label for="{{f.id_for_l}}">{{f.label}}: </label> {{f}}
+    {% endif %}
+
+    {% endfor %}
+
+    <button type="submit">{% trans 'Добавить комментарий' %}</button>
+</form>
+<hr>
+
+
+{% for c in comm %}
+{% if c.shops_id == thing.id %}
+<p><b>{{c.author}}</b></p>
+<p>{% trans Оценка %}: {{c.grade}}</p>
+<p>{% trans Отзыв %}:<br>{{c.comm}}</p>
+{% endif %}
+{% endfor %}
+{% endblock %}

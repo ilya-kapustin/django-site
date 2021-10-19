@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 08:59+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\app_users\apps.py:6
+msgid "app_users"
+msgstr "Пользователи"
+
+#: .\app_users\models.py:9
+msgid "social"
+msgstr "Социальные сети"
+
+#: .\app_users\models.py:10
+msgid "address"
+msgstr "Адрес"
+
+#: .\app_users\models.py:12
+msgid "brightday"
+msgstr "День рождения"
+
+#: .\app_users\models.py:15
+msgid "users"
+msgstr "Пользователи"
+
+#: .\app_users\models.py:16
+msgid "user"
+msgstr "Пользователь"
+
+#: .\myshop\settings.py:124
+msgid "Russia"
+msgstr ""
+
+#: .\myshop\settings.py:125
+msgid "English"
+msgstr ""
+
+#: .\shops_index\apps.py:7
+msgid "shops_index"
+msgstr "Товары"
+
+#: .\shops_index\models.py:15
+msgid "title"
+msgstr "Название"
+
+#: .\shops_index\models.py:16
+msgid "code_thing"
+msgstr "Артикль"
+
+#: .\shops_index\models.py:17 .\shops_index\models.py:60
+msgid "img"
+msgstr "Изображение"
+
+#: .\shops_index\models.py:18 .\shops_index\models.py:61
+msgid "description"
+msgstr "Описание"
+
+#: .\shops_index\models.py:22
+msgid "price"
+msgstr "Цена"
+
+#: .\shops_index\models.py:23
+msgid "views_count"
+msgstr "Кол-во просмотров"
+
+#: .\shops_index\models.py:25 .\shops_index\models.py:65
+#: .\shops_index\models.py:69 .\shops_index\models.py:97
+msgid "group"
+msgstr "Группа"
+
+#: .\shops_index\models.py:26 .\shops_index\models.py:100
+msgid "status"
+msgstr "Статус"
+
+#: .\shops_index\models.py:27 .\shops_index\models.py:45
+#: .\shops_index\models.py:49
+msgid "tag"
+msgstr "Тег"
+
+#: .\shops_index\models.py:30
+msgid "goods"
+msgstr "Товары"
+
+#: .\shops_index\models.py:31
+msgid "good"
+msgstr "Товар"
+
+#: .\shops_index\models.py:48
+msgid "tags"
+msgstr "Теги"
+
+#: .\shops_index\models.py:59
+msgid "name"
+msgstr ""
+
+#: .\shops_index\models.py:64 .\shops_index\models.py:68
+msgid "groups"
+msgstr "Группы"
+
+#: .\shops_index\models.py:93
+msgid "author"
+msgstr "Автор"
+
+#: .\shops_index\models.py:94
+msgid "grade"
+msgstr "Оценка"
+
+#: .\shops_index\models.py:95 .\shops_index\models.py:104
+msgid "comm"
+msgstr "Комментарии"
+
+#: .\shops_index\models.py:99
+msgid "shops"
+msgstr "Товары"
+
+#: .\shops_index\models.py:103
+msgid "comms"
+msgstr "Комментарии"
+
+#: .\shops_index\templates\shops_index\base.html:13
+msgid "Главная"
+msgstr "Главная"
+
+#: .\shops_index\templates\shops_index\base.html:14
+msgid "О нас"
+msgstr "О нас"
+
+#: .\shops_index\templates\shops_index\base.html:15
+msgid "Контакты"
+msgstr "Контакты"
+
+#: .\shops_index\templates\shops_index\base.html:17
+msgid "Авторизация"
+msgstr "Авторизация"
+
+#: .\shops_index\templates\shops_index\base.html:18
+msgid "Регистрация"
+msgstr "Регистрация"
+
+#: .\shops_index\templates\shops_index\base.html:21
+msgid "Корзина"
+msgstr "Корзина"
+
+#: .\shops_index\templates\shops_index\base.html:22
+msgid "Выйти"
+msgstr "Выйти"
+
+#: .\shops_index\templates\shops_index\group_detail.html:27
+#: .\shops_index\templates\shops_index\shops_index_detail.html:10
+msgid "Артикул"
+msgstr "Актикль"
+
+#: .\shops_index\templates\shops_index\group_detail.html:28
+#: .\shops_index\templates\shops_index\shops_index_detail.html:11
+msgid "Группа"
+msgstr "Группа"
+
+#: .\shops_index\templates\shops_index\group_detail.html:29
+#: .\shops_index\templates\shops_index\shops_index_detail.html:12
+msgid "Цена"
+msgstr "Цена"
+
+#: .\shops_index\templates\shops_index\group_detail.html:36
+#: .\shops_index\templates\shops_index\shops_index_detail.html:14
+msgid "Описание"
+msgstr "Описание"
+
+#: .\shops_index\templates\shops_index\shops_index_detail.html:8
+msgid "Редактировать запись"
+msgstr "Редактировать"
+
+#: .\shops_index\templates\shops_index\shops_index_detail.html:13
+msgid "Дата размещения"
+msgstr "Дата размещения"
+
+#: .\shops_index\templates\shops_index\shops_index_detail.html:15
+msgid "Теги"
+msgstr "Теги"
+
+#: .\shops_index\templates\shops_index\shops_index_detail.html:43
+msgid "Добавить комментарий"
+msgstr "Добавить комментарий"

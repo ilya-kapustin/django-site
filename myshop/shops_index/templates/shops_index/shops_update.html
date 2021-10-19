@@ -1,0 +1,12 @@
+{% extends 'shops_index/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>{{form.non_field_errors}}</div>
+    {{form}}
+    <button type="submit">Обновить</button>
+</form>
+
+{% endblock %}

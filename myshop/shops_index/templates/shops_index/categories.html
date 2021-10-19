@@ -1,0 +1,14 @@
+{% extends 'shops_index/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% if request.user.is_staff %}
+<a href="/add_group">Добавить группу</a>
+{% endif %}
+<ol>
+    {% for g in group %}
+    <img src="../media/{{g.img}}" style="width: 100px;">
+    <li><a href="group/{{g.id}}">{{ g }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

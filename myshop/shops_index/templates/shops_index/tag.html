@@ -1,0 +1,13 @@
+{% extends 'shops_index/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% if request.user.is_staff %}
+<a href="/add_group">Добавить группу</a>
+{% endif %}
+<ol>
+    {% for tag in tags %}
+    <li><a href="/tag/{{tag.id}}">{{ tag }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
